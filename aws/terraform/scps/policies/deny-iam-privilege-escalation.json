@@ -1,0 +1,44 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyPrivilegeEscalation",
+      "Effect": "Deny",
+      "Action": [
+        "iam:AddUserToGroup",
+        "iam:AttachGroupPolicy",
+        "iam:AttachRolePolicy",
+        "iam:AttachUserPolicy",
+        "iam:CreatePolicy",
+        "iam:CreatePolicyVersion",
+        "iam:CreateRole",
+        "iam:CreateUser",
+        "iam:DeleteAccountPasswordPolicy",
+        "iam:DeleteGroupPolicy",
+        "iam:DeleteRolePermissionsBoundary",
+        "iam:DeleteRolePolicy",
+        "iam:DeleteUserPermissionsBoundary",
+        "iam:DeleteUserPolicy",
+        "iam:DetachGroupPolicy",
+        "iam:DetachRolePolicy",
+        "iam:DetachUserPolicy",
+        "iam:PutGroupPolicy",
+        "iam:PutRolePermissionsBoundary",
+        "iam:PutRolePolicy",
+        "iam:PutUserPermissionsBoundary",
+        "iam:PutUserPolicy",
+        "iam:SetDefaultPolicyVersion",
+        "iam:UpdateAssumeRolePolicy"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ArnNotLike": {
+          "aws:PrincipalArn": [
+            "arn:aws:iam::*:role/BreakGlassRole",
+            "arn:aws:iam::*:role/OrgAdminRole"
+          ]
+        }
+      }
+    }
+  ]
+}

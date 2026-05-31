@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyNonApprovedRegions",
+      "Effect": "Deny",
+      "NotAction": [
+        "a4b:*", "acm:*", "aws-marketplace-management:*",
+        "aws-marketplace:*", "budgets:*", "ce:*", "chime:*",
+        "cloudfront:*", "config:*", "cur:*", "directconnect:*",
+        "ec2:DescribeRegions", "ec2:DescribeTransitGateways",
+        "health:*", "iam:*", "importexport:*", "kms:*",
+        "mobileanalytics:*", "networkmanager:*", "organizations:*",
+        "pricing:*", "route53:*", "route53domains:*", "s3:GetAccount*",
+        "s3:ListAllMyBuckets", "shield:*", "sts:*", "support:*",
+        "trustedadvisor:*", "waf-regional:*", "waf:*", "wafv2:*",
+        "wellarchitected:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:RequestedRegion": ["us-east-1", "us-west-2", "eu-west-1"]
+        }
+      }
+    }
+  ]
+}

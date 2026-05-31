@@ -1,0 +1,21 @@
+{
+  "displayName": "CA-002-AllUsers-AnyApp-BlockLegacyAuth",
+  "state": "enabled",
+  "conditions": {
+    "users": {
+      "includeUsers": ["All"],
+      "excludeGroups": ["<BREAK_GLASS_GROUP_ID>"]
+    },
+    "applications": {
+      "includeApplications": ["All"]
+    },
+    "clientAppTypes": [
+      "exchangeActiveSync",
+      "other"
+    ]
+  },
+  "grantControls": {
+    "operator": "OR",
+    "builtInControls": ["block"]
+  }
+}

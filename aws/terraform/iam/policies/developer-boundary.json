@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDeveloperServices",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:*", "s3:*", "lambda:*", "rds:*",
+        "cloudwatch:*", "logs:*", "ecs:*", "ecr:*",
+        "ssm:*", "secretsmanager:Get*", "kms:Decrypt"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "DenyPrivilegeEscalation",
+      "Effect": "Deny",
+      "Action": [
+        "iam:CreateUser", "iam:AttachUserPolicy",
+        "iam:PutUserPolicy", "iam:AddUserToGroup",
+        "iam:CreateAccessKey", "iam:UpdateAccessKey",
+        "organizations:*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

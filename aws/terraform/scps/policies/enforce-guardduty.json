@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyGuardDutyDisable",
+      "Effect": "Deny",
+      "Action": [
+        "guardduty:DeleteDetector",
+        "guardduty:DisassociateFromMasterAccount",
+        "guardduty:DisassociateMembers",
+        "guardduty:StopMonitoringMembers",
+        "guardduty:UpdateDetector",
+        "guardduty:DeletePublishingDestination",
+        "guardduty:DeleteFilter",
+        "guardduty:DeleteIPSet",
+        "guardduty:DeleteMembers",
+        "guardduty:DeleteThreatIntelSet",
+        "guardduty:DisableOrganizationAdminAccount"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Global owners
+* @your-github-username
+
+# Provider-specific
+/aws/       @your-github-username
+/azure/     @your-github-username
+/gcp/       @your-github-username
+/m365/      @your-github-username
+/entra-id/  @your-github-username
